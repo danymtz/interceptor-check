@@ -1,0 +1,11 @@
+<input type="text" name="charName" [(ngModel)]="charName" (input)="onChange()">
+
+<div *ngIf="character$ | async as personaje">
+
+    <div *ngFor="let per of personaje.results">
+        <p>{{per.name}}</p>
+        <img [src]="per.image" alt="">
+    </div>
+    
+
+</div>

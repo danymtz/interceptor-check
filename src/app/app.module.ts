@@ -9,6 +9,10 @@ import { FirstComponent } from './components/first/first.component';
 import { SecondComponent } from './components/second/second.component';
 import { AuthInterceptor } from './libs/interceptors/auth.interceptor';
 import { ValidatorInterceptor } from './libs/interceptors/validator.interceptor';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatFormFieldModule, MAT_FORM_FIELD_DEFAULT_OPTIONS} from '@angular/material/form-field';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -20,7 +24,11 @@ import { ValidatorInterceptor } from './libs/interceptors/validator.interceptor'
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatFormFieldModule,
+    MatButtonModule,
+    MatIconModule
   ],
   providers: [
     {
@@ -32,7 +40,9 @@ import { ValidatorInterceptor } from './libs/interceptors/validator.interceptor'
       provide: HTTP_INTERCEPTORS,
       useClass: ValidatorInterceptor,
       multi: true
-    }
+    },
+    {provide: MAT_FORM_FIELD_DEFAULT_OPTIONS, 
+      useValue: {appearance: 'fill'}}
   ],
   bootstrap: [AppComponent]
 })

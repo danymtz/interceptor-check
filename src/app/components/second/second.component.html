@@ -1,11 +1,16 @@
-<input type="text" name="charName" [(ngModel)]="charName" (input)="onChange()">
+<div class="seacrh-container">
+    <input type="text" name="charName" [(ngModel)]="charName" (input)="onChange()">
 
-<div *ngIf="character$ | async as personaje">
-
-    <div *ngFor="let per of personaje.results">
-        <p>{{per.name}}</p>
-        <img [src]="per.image" alt="">
+    <div *ngIf="character$ | async as characters">
+        <div *ngFor="let char of characters.results" >
+            <div class="info-container">
+                <div>
+                    <p>{{char.name}}</p>
+                    <img [src]="char.image" alt="">
+                </div>
+            </div>
+        </div>
     </div>
-    
-
 </div>
+
+

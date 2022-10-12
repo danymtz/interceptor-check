@@ -1,0 +1,27 @@
+.login-container{  
+    display: flex;
+    justify-content: center;
+    padding-top: 10%;
+
+    .login{
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+
+        form {
+            .icon-session {
+                display: flex;
+                justify-content: center;
+            }
+
+            padding: 40px;
+            border: 2px solid black;
+            border-radius: 10px;
+    
+            .button-container {
+                display: flex;
+                justify-content: center;
+            }
+        }
+    }
+}

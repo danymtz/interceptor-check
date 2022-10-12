@@ -1,4 +1,31 @@
-.info-container{
+.searcher{
     display: flex;
     flex-wrap: wrap;
+}
+.searcher input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    background-size: 24px;
+    width: 200px;
+    border: transparent;
+    border-bottom: solid 1px #ccc;
+    padding: 10px 10px 10px 30px;
+    outline: none;
+}
+
+.info-container{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 10px;
+
+    img{
+        padding: 20px;
+    }
+    p{
+        padding-left: 20px;
+        font-size: 20px;
+    }
 }

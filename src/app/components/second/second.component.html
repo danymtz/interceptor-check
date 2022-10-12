@@ -1,13 +1,17 @@
 <div class="seacrh-container">
-    <input type="text" name="charName" [(ngModel)]="charName" (input)="onChange()">
 
-    <div *ngIf="character$ | async as characters">
-        <div *ngFor="let char of characters.results" >
-            <div class="info-container">
-                <div>
-                    <p>{{char.name}}</p>
-                    <img [src]="char.image" alt="">
-                </div>
+    <div class="searcher">
+        <label><mat-icon>search</mat-icon></label>
+        <input mat-input type="text" name="charName" [(ngModel)]="charName" (input)="onChange()"
+        placeholder="search characters">
+    </div>
+    
+
+    <div *ngIf="character$ | async as characters" class="info-container">
+        <div *ngFor="let char of characters.results">
+            <div>
+                <p>{{char.name}}</p>
+                <img [src]="char.image">
             </div>
         </div>
     </div>

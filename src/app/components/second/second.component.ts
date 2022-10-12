@@ -14,11 +14,7 @@ export class SecondComponent implements OnInit {
 
   constructor(private api: ApiService) {
     this.character$ = this.api.searchChar(this.charName).pipe(
-      map ((resp:any) => {
-        console.log('ok1',resp);
-        
-      })
-      //tap(console.log)
+      tap(console.log)
     )
    }
 
